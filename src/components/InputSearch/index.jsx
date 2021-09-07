@@ -1,18 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import GithubContext from '../../context/GithubContext';
-import UserInput from './style';
+import { DivSearch, UserInput, ButtonSubmit } from './style';
 
 function InputSearch() {
-  const { userGithub, setUserGithub } = useContext(GithubContext);
+  const { setUserGithub } = useContext(GithubContext);
+  const [user, setUser] = useState('');
+
+  const submitSearch = (event) => {
+    setUserGithub(user);
+  }
 
   return (
-    <div>
+    <DivSearch>
       <UserInput
         placeholder='Digite seu usuário do Github'
-        value={ userGithub }
-        onChange={ (e) => setUserGithub(e.target.value) }
+        value={ user }
+        onChange={ (event) => setUser(event.target.value) }
       />
-    </div>
+      <ButtonSubmit onClick={ submitSearch } >
+        Pesquisar
+      </ButtonSubmit>
+    </DivSearch>
   );
 }
 
