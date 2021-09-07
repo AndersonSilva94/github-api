@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import GithubContext from '../../context/GithubContext';
 import TextInfo from '../TextInfo';
+import UserArea from '../UserArea';
 import Container from './style';
 
 function GeneralArea() {
@@ -8,7 +9,7 @@ function GeneralArea() {
 
   return (
     <Container>
-      {!userGithub ? (<TextInfo />) : ()}
+      {!userGithub ? (<TextInfo />) : (<UserArea />)}
     </Container>
   );
 }
