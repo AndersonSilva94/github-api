@@ -1,10 +1,11 @@
 import React from 'react';
+import InputSearch from './components/InputSearch';
 import GithubProvider from './context/GithubProvider';
 
 function App() {
   return (
     <GithubProvider>
-      teste
+      <InputSearch />
     </GithubProvider>
   );
 }
