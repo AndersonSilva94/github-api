@@ -28,7 +28,7 @@ export const FotoUser = styled.img`
   margin-right: 20px;
   width: 9rem;
   height: 9rem;
-  box-shadow: 2px 2px 10px black;
+  box-shadow: 2px 2px 10px ${(props) => props.theme.colors.text};
 `;
 
 export const InfosUser = styled.div`

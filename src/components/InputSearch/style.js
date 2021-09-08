@@ -8,7 +8,7 @@ export const DivSearch = styled.div`
 `;
 
 export const UserInput = styled.input`
-  border: 2px solid grey;
+  border: 2px solid ${(props) => props.theme.colors.primary};
   border-radius: 5px;
   padding: 15px;
   width: 90%;
