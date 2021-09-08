@@ -15,16 +15,17 @@ export const UserInput = styled.input`
 `;
 
 export const ButtonSubmit = styled.button`
-  background-color: #8015AD;
-  border: 1px solid #FFF;
+  background-color: ${(props) => props.theme.colors.secondary};
+  border: 1px solid ${(props) => props.theme.colors.white};
   border-radius: 5px;
-  color: #FFF;
+  color: ${(props) => props.theme.colors.white};
   cursor: pointer;
   padding: 15px;
   transition: 0.2s;
+  font-family: ${(props) => props.theme.fonts.fontFamily};
   :hover {
-    background-color: #FFF;
-    color: #8015AD;
-    border-color: #8015AD;
+    background-color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.secondary};
+    border-color: ${(props) => props.theme.colors.secondary};
   }
 `;
