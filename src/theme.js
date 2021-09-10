@@ -4,6 +4,7 @@ const theme = {
     secondary: '#8015AD',
     text: '#000000B3',
     white: '#FFF',
+    border: '#E5E5E5'
   },
   fonts: {
     fontFamily: 'Poppins, sans-serif',

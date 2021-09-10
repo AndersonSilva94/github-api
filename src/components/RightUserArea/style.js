@@ -40,6 +40,7 @@ export const ButtonRightUserArea = styled.button`
 
 export const AreaRepos = styled.div`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 2rem;
 `;

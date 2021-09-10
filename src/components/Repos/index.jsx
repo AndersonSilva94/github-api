@@ -10,14 +10,15 @@ export const CardRepos = styled.div`
   padding: 20px 10px;
   border-radius: 5px;
   background-color: ${(props) => props.theme.colors.white};
+  margin-top: 0.5rem;
 `;
 
-function Repos(props) {
+function Repos({ name, fullName, link }) {
   return (
     <CardRepos>
-      <h3>Nome do repositório</h3>
-      <h4>Full name</h4>
-      <p>link do repositório</p>
+      <h3>{name}</h3>
+      <h4>{fullName}</h4>
+      <p>{link}</p>
     </CardRepos>
   );
 }
