@@ -27,10 +27,21 @@ function GithubProvider({ children }) {
         loading: !oldState.loading,
       }));
     };
-  
+
+    const getUserRepos = async (username) => {
+      const fetchRepos = await fetch(`https://api.github.com/users/${username}/repos`);
+      const responseRepos = await fetchRepos.json();
+
+      await setGithubState((oldState) => ({
+        ...oldState,
+        repositories: responseRepos
+      }));
+    };
+    
     const contextValue = {
       githubState,
       getUser: useCallback((username) => getUser(username), []),
+      getUserRepos: useCallback((username) => getUserRepos(username), []),
     };
   
 

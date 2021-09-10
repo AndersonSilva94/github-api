@@ -7,7 +7,10 @@ export const MainUser = styled.div`
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 5px;
   width: 35%;
+  height: 40%;
   padding: 15px;
+  position: sticky;
+  top: 1rem;
   font-family: ${(props) => props.theme.fonts.fontFamily};
   color: ${(props) => props.theme.colors.white};
   @media(max-width: 800px) {
