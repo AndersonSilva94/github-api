@@ -3,11 +3,17 @@ import useGithub from '../../hooks/Hooks';
 import { DivSearch, UserInput, ButtonSubmit } from './style';
 
 function InputSearch() {
-  const { getUser } = useGithub();
+  const { getUser, setGithubState } = useGithub();
   const [user, setUser] = useState('');
 
   const submitSearch = () => {
-    if(!user) return;
+    if(!user) {
+      setGithubState((oldState) => ({
+      ...oldState,
+      hasUser: false
+    }))
+    return;
+  }
     return getUser(user);
   }
 

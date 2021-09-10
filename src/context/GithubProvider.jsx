@@ -37,11 +37,23 @@ function GithubProvider({ children }) {
         repositories: responseRepos
       }));
     };
+
+    const getUserStarred = async (username) => {
+      const fetchStarred = await fetch(`https://api.github.com/users/${username}/starred`);
+      const responseStarred = await fetchStarred.json();
+
+      await setGithubState((oldState) => ({
+        ...oldState,
+        starred: responseStarred
+      }));
+    };
     
     const contextValue = {
       githubState,
+      setGithubState,
       getUser: useCallback((username) => getUser(username), []),
       getUserRepos: useCallback((username) => getUserRepos(username), []),
+      getUserStarred: useCallback((username) => getUserStarred(username), []),
     };
   
 

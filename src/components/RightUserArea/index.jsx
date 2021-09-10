@@ -4,14 +4,15 @@ import Repos from '../Repos';
 import { AreaButtons, AreaRepos, ButtonRightUserArea, ReposUser } from './style';
 
 function RightUserArea(props) {
-  const { githubState, getUserRepos } = useGithub();
+  const { githubState, getUserRepos, getUserStarred } = useGithub();
   const [valueClick, setValueClick] = useState();
 
-  const { user, repositories } = githubState;
+  const { user, repositories, starred } = githubState;
 
   useEffect(() => {
     if(user.login) {
-      getUserRepos(user.login)
+      getUserRepos(user.login);
+      getUserStarred(user.login);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -22,7 +23,6 @@ function RightUserArea(props) {
     setValueClick(innerHTML);
   }
 
-  console.log(valueClick);
   return (
     <ReposUser>
       <AreaButtons>
@@ -33,6 +33,13 @@ function RightUserArea(props) {
         {valueClick === 'Repositories' && (
           <>
             {repositories.map((repo) => (
+              <Repos key={repo.id} name={repo.name} fullName={repo.full_name} link={repo.html_url} />
+            ))}
+          </>
+        )}
+        {valueClick === 'Starred' && (
+          <>
+            {starred.map((repo) => (
               <Repos key={repo.id} name={repo.name} fullName={repo.full_name} link={repo.html_url} />
             ))}
           </>
