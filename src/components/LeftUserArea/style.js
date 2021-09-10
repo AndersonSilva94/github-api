@@ -18,6 +18,7 @@ export const MainUser = styled.div`
 export const TopUser = styled.div`
   margin-top: 2rem;
   display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -36,12 +37,14 @@ export const InfosUser = styled.div`
   flex-direction: column;
 `;
 
-export const NameUser = styled.h2`
+export const NameUser = styled.h3`
   color: ${(props) => props.theme.colors.white};
+  text-shadow: 1px 1px 2px ${(props) => props.theme.colors.text};
+  margin-bottom: 0.8rem;
 `;
 
 export const Info = styled.p`
-  font-size: 1rem;
+  font-size: 0.9rem;
 `;
 
 export const BottomUser = styled.div`

@@ -1,12 +1,41 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import GithubContext from './GithubContext';
 import PropTypes from 'prop-types'
 
 function GithubProvider({ children }) {
-  const [userGithub, setUserGithub] = useState();
+    const [githubState, setGithubState] = useState({
+      hasUser: false,
+      loading: false,
+      user: {},
+      repositories: [],
+      starred: [],
+    });
+  
+    const getUser = async (username) => {
+      setGithubState((oldState) => ({
+        ...oldState,
+        loading: !oldState.loading,
+      }));
+  
+      const fetchUser = await fetch(`https://api.github.com/users/${username}`);
+      const responseUser = await fetchUser.json()
+
+      await setGithubState((oldState) => ({
+        ...oldState,
+        hasUser: true,
+        user: { ...responseUser },
+        loading: !oldState.loading,
+      }));
+    };
+  
+    const contextValue = {
+      githubState,
+      getUser: useCallback((username) => getUser(username), []),
+    };
+  
 
   return (
-    <GithubContext.Provider value={{ userGithub, setUserGithub }}>
+    <GithubContext.Provider value={contextValue}>
       { children }
     </GithubContext.Provider>
   );

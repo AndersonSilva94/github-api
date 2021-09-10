@@ -1,13 +1,14 @@
-import React, { useContext, useState } from 'react';
-import GithubContext from '../../context/GithubContext';
+import React, { useState } from 'react';
+import useGithub from '../../hooks/Hooks';
 import { DivSearch, UserInput, ButtonSubmit } from './style';
 
 function InputSearch() {
-  const { setUserGithub } = useContext(GithubContext);
+  const { getUser } = useGithub();
   const [user, setUser] = useState('');
 
-  const submitSearch = (event) => {
-    setUserGithub(user);
+  const submitSearch = () => {
+    if(!user) return;
+    return getUser(user);
   }
 
   return (

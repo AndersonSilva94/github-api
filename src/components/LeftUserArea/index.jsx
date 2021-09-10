@@ -1,36 +1,46 @@
 import React from 'react';
 import { BottomInfo, BottomUser, FotoUser, Info, InfosUser, MainUser, NameUser, TopUser } from './style';
-import photo from '../../assets/profile-photo.jpg'
+import useGithub from '../../hooks/Hooks';
 
 function LeftUserArea(props) {
+  const { githubState } = useGithub();
+  const { user: { name, login, avatar_url, company, location,
+    blog, followers, following, public_gists, public_repos } } = githubState;
+
   return (
     <MainUser>
       <TopUser>
-        <FotoUser src={photo} />
+        <FotoUser src={avatar_url} />
         <InfosUser>
-          <NameUser>Anderson Silva</NameUser>
-          <Info>Username: </Info>
-          <Info>Company: </Info>
-          <Info>Location: </Info>
-          <Info>Blog: </Info>
+          <NameUser>{name}</NameUser>
+          <Info>
+            <b>Username:</b>
+            {' '}
+            <a href={`https://github.com/${login}`} target="_blank" rel="noopener noreferrer">
+              @{login}
+            </a>
+          </Info>
+          <Info><b>Company:</b> {company}</Info>
+          <Info><b>Location:</b> {location}</Info>
+          <Info><b>Blog:</b> {blog}</Info>
         </InfosUser>
       </TopUser>
       <BottomUser>
         <BottomInfo>
-          <p>Followers</p>
-          <p>1</p>
+          <h4>Followers</h4>
+          <p>{followers}</p>
         </BottomInfo>
         <BottomInfo>
-          <p>Followings</p>
-          <p>1</p>
+          <h4>Followings</h4>
+          <p>{following}</p>
         </BottomInfo>
         <BottomInfo>
-          <p>Gists</p>
-          <p>1</p>
+          <h4>Gists</h4>
+          <p>{public_gists}</p>
         </BottomInfo>
         <BottomInfo>
-          <p>Repos</p>
-          <p>1</p>
+          <h4>Repos</h4>
+          <p>{public_repos}</p>
         </BottomInfo>
       </BottomUser>
     </MainUser>
