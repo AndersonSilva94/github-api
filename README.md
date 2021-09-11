@@ -11,7 +11,7 @@ Criação de uma aplicação que pesquisa por usuários do Github com base no us
 - Context API
 - React Hooks
 
-## ## Projeto Final :trophy:
+## Projeto Final :trophy:
 ![Captura de tela de 2021-09-11 03-31-19](https://user-images.githubusercontent.com/52717632/132940343-3f53d682-c51b-4823-b383-5bd5cec25129.png)
 <br>
 
