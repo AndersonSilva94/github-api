@@ -1,5 +1,5 @@
 import React from 'react';
-import { BottomInfo, BottomUser, FotoUser, Info, InfosUser, MainUser, NameUser, TopUser } from './style';
+import { BottomInfo, BottomUser, FotoUser, Info, InfosUser, LinkUser, MainUser, NameUser, TopUser } from './style';
 import useGithub from '../../hooks/Hooks';
 
 function LeftUserArea(props) {
@@ -16,13 +16,19 @@ function LeftUserArea(props) {
           <Info>
             <b>Username:</b>
             {' '}
-            <a href={`https://github.com/${login}`} target="_blank" rel="noopener noreferrer">
+            <LinkUser href={`https://github.com/${login}`} target="_blank" rel="noopener noreferrer">
               @{login}
-            </a>
+            </LinkUser>
           </Info>
           <Info><b>Company:</b> {company}</Info>
           <Info><b>Location:</b> {location}</Info>
-          <Info><b>Blog:</b> {blog}</Info>
+          <Info>
+            <b>Blog:</b>
+            {' '}
+            <LinkUser href={blog} target="_blank" rel="noopener noreferrer">
+              {blog}
+            </LinkUser>
+          </Info>
         </InfosUser>
       </TopUser>
       <BottomUser>
