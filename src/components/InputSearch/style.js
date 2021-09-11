@@ -5,6 +5,11 @@ export const DivSearch = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-top: 1rem;
+  @media(max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const UserInput = styled.input`
@@ -12,6 +17,9 @@ export const UserInput = styled.input`
   border-radius: 5px;
   padding: 15px;
   width: 90%;
+  @media(max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 export const ButtonSubmit = styled.button`
@@ -27,5 +35,9 @@ export const ButtonSubmit = styled.button`
     background-color: ${(props) => props.theme.colors.white};
     color: ${(props) => props.theme.colors.secondary};
     border-color: ${(props) => props.theme.colors.secondary};
+  }
+  @media(max-width: 600px) {
+    margin-top: 0.5rem;
+    width: 90%;
   }
 `;

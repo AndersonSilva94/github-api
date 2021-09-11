@@ -17,12 +17,26 @@ function InputSearch() {
     return getUser(user);
   }
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      if(!user) {
+        setGithubState((oldState) => ({
+          ...oldState,
+          hasUser: false
+        }))
+        return;
+      }
+        return getUser(user);
+    }
+  };
+
   return (
     <DivSearch>
       <UserInput
         placeholder='Digite seu usuário do Github'
         value={ user }
         onChange={ (event) => setUser(event.target.value) }
+        onKeyPress={handleKeyPress}
       />
       <ButtonSubmit onClick={ submitSearch } >
         Pesquisar

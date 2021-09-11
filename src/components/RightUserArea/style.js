@@ -9,6 +9,7 @@ export const ReposUser = styled.div`
   padding: 15px;
   @media(max-width: 800px) {
     width: 100%;
+    margin-top: 1rem;
   }
 `;
 
