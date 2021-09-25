@@ -7,7 +7,8 @@ export default {
     text: '#000000B3',
     textSecondary: '#FFF',
     background: '#FFF',
-    border: '#E5E5E5'
+    border: '#E5E5E5',
+    offColor: '#391866'
   },
   fonts: {
     fontFamily: 'Poppins, sans-serif',
