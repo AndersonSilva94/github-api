@@ -13,7 +13,7 @@ export const MainUser = styled.div`
   position: sticky;
   top: 1rem;
   font-family: ${(props) => props.theme.fonts.fontFamily};
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.textSecondary};
   @media(max-width: 600px) {
     width: 100%;
     position: unset;
@@ -34,7 +34,7 @@ export const TopUser = styled.div`
 export const FotoUser = styled.img`
   border-radius: 50%;
   padding: 5px;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.textSecondary};
   margin-right: 20px;
   width: 9rem;
   height: 9rem;
@@ -50,7 +50,7 @@ export const InfosUser = styled.div`
 `;
 
 export const NameUser = styled.h3`
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.textSecondary};
   text-shadow: 1px 1px 2px ${(props) => props.theme.colors.text};
   margin-bottom: 0.8rem;
 `;
@@ -79,7 +79,7 @@ export const BottomInfo = styled.div`
 `;
 
 export const LinkUser = styled.a`
-  color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.textSecondary};
   margin-top: 0.5rem;
   :hover {
     opacity: 0.7;

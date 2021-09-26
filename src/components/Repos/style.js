@@ -8,7 +8,8 @@ export const CardRepos = styled.div`
   width: 48%;
   padding: 20px 10px;
   border-radius: 5px;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.textSecondary};
   margin-top: 0.5rem;
   word-break: break-all;
   @media(max-width: 414px) {
@@ -22,7 +23,7 @@ export const NameRepo = styled.h2`
 `;
 
 export const LinkRepo = styled.a`
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.textSecondary};
   margin-top: 0.5rem;
   :hover {
     opacity: 0.7;

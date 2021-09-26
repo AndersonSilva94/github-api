@@ -30,11 +30,11 @@ export const ButtonRightUserArea = styled.button`
   font-family: ${(props) => props.theme.fonts.fontFamily};
   :hover {
     background-color: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.textSecondary};
   }
   :focus {
     background-color: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.textSecondary};
     box-shadow: 2px 2px 5px ${(props) => props.theme.colors.text};
   }
 `;
