@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GithubProvider from './context/GithubProvider';
 import Home from './pages/Home';
 import dark from './themes/dark';
 import light from './themes/light';
+import usePersistentState from './utils/usePersistentState';
 
 function App() {
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = usePersistentState('theme', light)
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light);
