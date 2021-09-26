@@ -8,12 +8,12 @@ const TextDiv = styled.div`
   color: ${(props) => props.theme.colors.secondary};
 `;
 
-function TextInfo() {
+function NotUser() {
   return (
     <TextDiv>
-      <h1>Nenhum usuário pesquisado</h1>
+      <h1>{`Nenhum usuário encontrado :(`}</h1>
     </TextDiv>
   );
 }
 
-export default TextInfo;
+export default NotUser;

@@ -6,7 +6,6 @@ export const MainUser = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 5px;
-  box-shadow: 3px 3px 5px ${(props) => props.theme.colors.text};
   width: 35%;
   height: 40%;
   padding: 15px;

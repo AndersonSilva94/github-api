@@ -2,7 +2,7 @@ import React from 'react';
 import { BottomInfo, BottomUser, FotoUser, Info, InfosUser, LinkUser, MainUser, NameUser, TopUser } from './style';
 import useGithub from '../../hooks/Hooks';
 
-function LeftUserArea(props) {
+function LeftUserArea() {
   const { githubState } = useGithub();
   const { user: { name, login, avatar_url, company, location,
     blog, followers, following, public_gists, public_repos } } = githubState;

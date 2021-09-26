@@ -3,14 +3,14 @@ import useGithub from '../../hooks/Hooks';
 import Repos from '../Repos';
 import { AreaButtons, AreaRepos, ButtonRightUserArea, ReposUser } from './style';
 
-function RightUserArea(props) {
+function RightUserArea() {
   const { githubState, getUserRepos, getUserStarred } = useGithub();
   const [valueClick, setValueClick] = useState();
 
   const { user, repositories, starred } = githubState;
 
   useEffect(() => {
-    if(user.login) {
+    if (user.login) {
       getUserRepos(user.login);
       getUserStarred(user.login);
     }

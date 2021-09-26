@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardRepos, LinkRepo, NameRepo, SpanInfo } from './style';
+import PropTypes from 'prop-types';
 
 function Repos({ name, fullName, link }) {
   return (
@@ -11,6 +12,12 @@ function Repos({ name, fullName, link }) {
       </LinkRepo>
     </CardRepos>
   );
+}
+
+Repos.propTypes = {
+  name: PropTypes.string.isRequired,
+  fullName: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired
 }
 
 export default Repos;
