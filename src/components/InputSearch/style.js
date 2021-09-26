@@ -18,7 +18,7 @@ export const UserInput = styled.input`
   padding: 15px;
   width: 90%;
   background: transparent;
-  color: ${(props) => props.theme.colors.textSecondary};
+  color: ${(props) => props.theme.colors.text};
   @media(max-width: 600px) {
     width: 90%;
   }
